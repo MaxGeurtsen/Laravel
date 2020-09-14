@@ -22,14 +22,9 @@
             </div>
 
             <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
                 <a href="{{route('detail')}}">detail</a>
                 <a href="{{route('add')}}">add</a>
                 <a href="{{route('news')}}">news</a>
-                <a href="{{route('about')}}">about</a>
             </div>
         </div>
     </div>
