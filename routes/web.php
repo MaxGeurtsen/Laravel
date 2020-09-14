@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 
 Route::get('/about', 'AboutController@show')->name('about');
+route::get('/news', 'NewsController@show')->name('news');
+Route::get('/add', 'AddController@show')->name('add');
+Route::get('/detail', 'DetailController@show')->name('detail');
