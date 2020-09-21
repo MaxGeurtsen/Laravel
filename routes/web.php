@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+route::get('/', function (){return view('welcome');})->name('welcome');
 Route::get('/detail', 'QuestionsController@showAll')->name('detail');
 route::get('user/create', function () {return view('register');})->name('register');
 Route::post('user/store', 'UsersController@store')->name('store');

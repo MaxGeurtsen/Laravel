@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use mysql_xdevapi\Table;
 
 class UsersController extends Controller
 {
@@ -34,12 +35,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-//        $request->validate([
-//            "name" => 'required',
-//            "e-mail" => 'required',
-//            "password1" => 'required',
-//            "password2" => 'required',
-//        ]);
+        $request->validate([
+            "name" => 'required',
+            "email" => 'required',
+            "password1" => 'required',
+            "password2" => 'required',
+        ]);
+
+        DB::table('users')->insert();
 
     }
 
