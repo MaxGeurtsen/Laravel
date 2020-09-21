@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use mysql_xdevapi\Table;
 
 class UsersController extends Controller
@@ -37,12 +39,29 @@ class UsersController extends Controller
     {
         $request->validate([
             "name" => 'required',
-            "email" => 'required',
-            "password1" => 'required',
-            "password2" => 'required',
+            "email" => 'required|email|unique:users',
+            "password1" => 'required|min:4',
+            "password2" => 'required|min:4|same:password1',
         ]);
 
-        DB::table('users')->insert();
+        $name = $request->get('name');
+        $email = $request->get('email');
+        $pass1 = $request->get('password1');
+
+        $hashed = Hash::make($pass1, [
+            'rounds' => 12,
+        ]);
+
+        DB::table('users')->insert([
+            'name' => $name,
+            'email' => $email,
+            'password' => $hashed
+        ]);
+
+        return view('register', [
+            'name' => $name,
+            'email' => $email
+        ]);
 
     }
 
