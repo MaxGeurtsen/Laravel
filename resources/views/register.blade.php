@@ -2,11 +2,6 @@
 
 @section('content')
     <div>
-        @if($name ?? '')
-            <h1>Created user {{$name}} with e-mail: {{$email}}</h1>
-        @endif
-    </div>
-    <div>
         <form method="post" action="{{ route('store') }}">
             @csrf
             <label for="name">Name</label><br>

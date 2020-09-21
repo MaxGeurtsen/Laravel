@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -44,23 +45,20 @@ class UsersController extends Controller
             "password2" => 'required|min:4|same:password1',
         ]);
 
-        $name = $request->get('name');
-        $email = $request->get('email');
         $pass1 = $request->get('password1');
-
         $hashed = Hash::make($pass1, [
             'rounds' => 12,
         ]);
 
-        DB::table('users')->insert([
-            'name' => $name,
-            'email' => $email,
-            'password' => $hashed
-        ]);
+        $users = new users();
+        $users->name = $request->get('name');
+        $users->email = $request->get('email');
+        $users->password = $hashed;
+        $users->save();
 
-        return view('register', [
-            'name' => $name,
-            'email' => $email
+        return view('welcome', [
+            'name' => $users->name ,
+            'email' => $users->email
         ]);
 
     }

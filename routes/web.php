@@ -15,4 +15,4 @@ use Illuminate\Support\Facades\Route;
 route::get('/', function (){return view('welcome');})->name('welcome');
 Route::get('/detail', 'QuestionsController@showAll')->name('detail');
 route::get('user/create', function () {return view('register');})->name('register');
-Route::post('user/store', 'UsersController@store')->name('store');
+Route::post('/', 'UsersController@store')->name('store');

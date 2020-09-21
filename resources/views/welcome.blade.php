@@ -3,6 +3,11 @@
 @section('content')
     <div class="flex-center position-ref full-height">
         <div class="content">
+            <div>
+                @if($name ?? '')
+                    <h1>Created user {{$name}} with e-mail: {{$email}}</h1>
+                @endif
+            </div>
             <div class="title m-b-md">
                 Laravel
             </div>
