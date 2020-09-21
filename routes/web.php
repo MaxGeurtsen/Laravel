@@ -13,10 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-
-route::get('/', 'NewsController@show')->name('news');
-Route::get('/add', 'AddController@show')->name('add');
-Route::get('/detail', 'DetailController@show')->name('detail');
+Route::get('/detail', 'QuestionsController@showAll')->name('detail');
+route::get('user/create', function () {return view('register');})->name('register');
+Route::post('user/store', 'UsersController@store')->name('store');
