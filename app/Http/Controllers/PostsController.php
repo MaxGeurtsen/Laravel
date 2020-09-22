@@ -54,5 +54,7 @@ class PostsController extends Controller
             'categories' => $categories
         ]);
 
+
     }
+
 }

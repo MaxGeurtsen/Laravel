@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\posts;
+use App\questions;
 use App\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -26,11 +28,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $posts = users::all();
+        $user = Auth::user();
 
-
-        return view('home',[
-            'posts' => $posts
+        return view('home', [
+            'user' => $user
         ]);
     }
 }
