@@ -18,11 +18,19 @@
                     </div>
                 </div>
             </div>
-        </div>
-        @foreach($posts as $post)
-            <h1>{{$post->id}}</h1>
-        @endforeach
-        <div>
+            <div>
+                <div>
+                    user
+                </div>
+                <div>
+                    <div>
+                        a
+                    </div>
+                    <div>
+                        b
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -19,6 +19,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|categories whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|categories whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\posts[] $posts
+ * @property-read int|null $posts_count
  */
 class categories extends Model
 {

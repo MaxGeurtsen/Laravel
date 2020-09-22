@@ -18,6 +18,8 @@ class CreatePostsTable extends Migration
             $table->foreignId('question_id_1')->constrained();
             $table->foreignId('question_id_2')->constrained();
             $table->foreignId('category_id')->constrained('categories');
+            $table->foreignId('user_id')->constrained('users');
+            $table->boolean('active')->nullable();
             $table->timestamps();
         });
     }

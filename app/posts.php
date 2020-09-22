@@ -23,10 +23,13 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereQuestionId2($value)
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int $user_id
+ * @property-read \App\categories $category
+ * @method static \Illuminate\Database\Eloquent\Builder|posts whereUserId($value)
  */
 class posts extends Model
 {
-    public $fillable = ['question_id_1', 'question_id_2', 'category_id'];
+    public $fillable = ['question_id_1', 'question_id_2', 'category_id','user_id'];
 
     public function category()
     {

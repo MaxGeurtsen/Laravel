@@ -27,6 +27,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|users whereRememberToken($value)
  * @method static \Illuminate\Database\Eloquent\Builder|users whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property int|null $admin
+ * @method static \Illuminate\Database\Eloquent\Builder|users whereAdmin($value)
  */
 class users extends Model
 {
