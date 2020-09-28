@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67cc8207-dc74-43b3-918f-76220f934d23" name="Default Changelist" comment="database set-up">
-      <change afterPath="$PROJECT_DIR$/resources/views/profiel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/create_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_category.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/create_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/detail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/questions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,6 +47,13 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="questions: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -270,7 +274,7 @@
       <workItem from="1600779928396" duration="5783000" />
       <workItem from="1600867926248" duration="274000" />
       <workItem from="1600868248372" duration="107000" />
-      <workItem from="1601280786362" duration="18785000" />
+      <workItem from="1601280786362" duration="23131000" />
     </task>
     <servers />
   </component>

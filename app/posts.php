@@ -28,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereUserId($value)
  * @property int|null $active
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereActive($value)
+ * @property-read \App\questions $question1
+ * @property-read \App\questions $question2
  */
 class posts extends Model
 {
@@ -35,6 +37,19 @@ class posts extends Model
 
     public function category()
     {
-        return $this->hasOne(categories::class);
+        return $this->belongsTo(categories::class);
+    }
+
+    public function questions($id)
+    {
+    $question = questions::whereId($id)
+        ->first();
+
+        return $question->question;
+    }
+
+
+    public function user(){
+        return $this->belongsTo(User::class);
     }
 }

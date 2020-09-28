@@ -24,5 +24,8 @@ class questions extends Model
 {
     public $fillable = ['question'];
 
-
+    public function posts()
+    {
+        return $this->hasOne(posts::class);
+    }
 }

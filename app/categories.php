@@ -30,6 +30,6 @@ class categories extends Model
 
     public function posts()
     {
-        return $this->hasOne(posts::class);
+        return $this->hasMany(posts::class);
     }
 }
