@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="67cc8207-dc74-43b3-918f-76220f934d23" name="Default Changelist" comment="database set-up">
+    <list default="true" id="67cc8207-dc74-43b3-918f-76220f934d23" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/categories.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/questions.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/questions.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -53,7 +56,14 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="questions: table" type="dbc44a63:MariaImplModel$Table" />
+        <item name="users_posts: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="votes: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -274,8 +284,17 @@
       <workItem from="1600779928396" duration="5783000" />
       <workItem from="1600867926248" duration="274000" />
       <workItem from="1600868248372" duration="107000" />
-      <workItem from="1601280786362" duration="23131000" />
+      <workItem from="1601280786362" duration="23229000" />
+      <workItem from="1601323521158" duration="5947000" />
     </task>
+    <task id="LOCAL-00001" summary="Query set-up">
+      <created>1601306310444</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601306310444</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -296,6 +315,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="database set-up" />
-    <option name="LAST_COMMIT_MESSAGE" value="database set-up" />
+    <MESSAGE value="Query set-up" />
+    <option name="LAST_COMMIT_MESSAGE" value="Query set-up" />
   </component>
 </project>

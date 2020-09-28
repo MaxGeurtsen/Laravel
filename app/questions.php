@@ -19,6 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|questions whereQuestion($value)
  * @method static \Illuminate\Database\Eloquent\Builder|questions whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property-read \App\posts|null $posts
  */
 class questions extends Model
 {

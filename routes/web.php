@@ -24,6 +24,7 @@ Route::get('/category/create','CategoriesController@index')->name('create.catego
 Route::post('/category/store', 'CategoriesController@store')->name('store.category')->middleware('auth');
 Route::post('/category/onoff','CategoriesController@active')->name('active.category')->middleware('auth');
 
+Route::post('vote', 'QuestionsController@vote')->name('vote')->middleware('auth');
 
 Auth::routes();
 

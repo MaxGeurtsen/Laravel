@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereActive($value)
  * @property-read \App\questions $question1
  * @property-read \App\questions $question2
+ * @property-read \App\User $user
  */
 class posts extends Model
 {

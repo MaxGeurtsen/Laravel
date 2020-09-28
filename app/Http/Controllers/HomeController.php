@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\categories;
 use App\posts;
+use App\users_posts;
+use App\votes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -27,9 +30,15 @@ class HomeController extends Controller
     {
 
         $posts = posts::all();
+        $votes = votes::all();
+        $user_posts = users_posts::whereUserId(Auth::id())
+            ->get();
+
 
         return view('home', [
-            'posts' => $posts
+            'posts' => $posts,
+            'votes' => $votes,
+            'up' => $user_posts
         ]);
     }
 }
