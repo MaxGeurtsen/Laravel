@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function index()
+    public function create()
     {
 
         $categories = categories::all();
@@ -19,8 +19,16 @@ class PostsController extends Controller
         ]);
     }
 
-    public function edit(){
+    public function index(Request $request)
+    {
+        $id = $request->get('id');
 
+        $post = posts::whereId($id )
+            ->first();
+
+        return view('detail', [
+            'post' => $post
+        ]);
     }
 
     public function store(Request $request)

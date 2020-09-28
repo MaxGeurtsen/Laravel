@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\posts;
 use App\users;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use mysql_xdevapi\Table;
@@ -17,7 +19,15 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
+
+
+        $posts = posts::whereUserId(Auth::id())
+            ->get();
+
+        return view('profiel',[
+            'posts' => $posts
+        ]);
     }
 
     /**
