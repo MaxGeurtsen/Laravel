@@ -1,13 +1,12 @@
-@extends('layout.layout')
+@extends('layout.layouts.app')
 
 @section('content')
 <div>
     <div class="content">
         <div class="links">
-            <a href="{{route('news')}}">news</a>
         </div>
         <div class="title m-b-md">
-            detail
+            <h1>Post Details</h1>
         </div>
         <div>
             @foreach($questions as $q)

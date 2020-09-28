@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,13 +16,15 @@ route::get('/', 'HomeController@index')->name('home');
 Route::get('/detail', 'QuestionsController@showAll')->name('detail');
 route::get('user/create', function () {return view('register');})->name('register');
 
-Route::get('/post/create', 'PostsController@index')->name('create.post');
-Route::post('post/store','PostsController@store')->name('store.post');
+Route::get('/post/create', 'PostsController@index')->name('create.post')->middleware('auth');
+Route::post('/post/store','PostsController@store')->name('store.post')->middleware('auth');
 
-Route::get('/category/create','CategoriesController@index')->name('create.category');
-Route::post('/category/store', 'CategoriesController@store')->name('store.category');
+Route::get('/category/create','CategoriesController@index')->name('create.category')->middleware('auth');
+Route::post('/category/store', 'CategoriesController@store')->name('store.category')->middleware('auth');
+Route::post('/category/onoff','CategoriesController@active')->name('active.category')->middleware('auth');
 
 
 Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');

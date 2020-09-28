@@ -26,6 +26,8 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $user_id
  * @property-read \App\categories $category
  * @method static \Illuminate\Database\Eloquent\Builder|posts whereUserId($value)
+ * @property int|null $active
+ * @method static \Illuminate\Database\Eloquent\Builder|posts whereActive($value)
  */
 class posts extends Model
 {
@@ -33,6 +35,6 @@ class posts extends Model
 
     public function category()
     {
-        return $this->belongsTo(categories::class);
+        return $this->hasOne(categories::class);
     }
 }

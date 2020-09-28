@@ -3,9 +3,22 @@
   <component name="ChangeListManager">
     <list default="true" id="67cc8207-dc74-43b3-918f-76220f934d23" name="Default Changelist" comment="database set-up">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/QuestionsController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/categories.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/categories.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/posts.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_21_085735_create_catagory_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_21_085735_create_catagory_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/add.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/create_category.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/create_category.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create_post.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,20 +65,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
         <item name="categories: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="posts: table" type="dbc44a63:MariaImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="laravel2.1: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="questions: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -215,14 +214,14 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.smartKeys" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\resources\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\resources\views\layout" />
       <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\resources\views" />
       <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\resources" />
       <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\app" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Max Geurtsen\PROGRAMEER\Laravel\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -283,7 +282,10 @@
       <workItem from="1600688592619" duration="10713000" />
       <workItem from="1600702457114" duration="8598000" />
       <workItem from="1600757892116" duration="6867000" />
-      <workItem from="1600779928396" duration="5557000" />
+      <workItem from="1600779928396" duration="5783000" />
+      <workItem from="1600867926248" duration="274000" />
+      <workItem from="1600868248372" duration="107000" />
+      <workItem from="1601280786362" duration="12423000" />
     </task>
     <servers />
   </component>

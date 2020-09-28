@@ -21,13 +21,15 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\posts[] $posts
  * @property-read int|null $posts_count
+ * @property int|null $active
+ * @method static \Illuminate\Database\Eloquent\Builder|categories whereActive($value)
  */
 class categories extends Model
 {
-    public $fillable = ['category'];
+    public $fillable = ['category','active'];
 
     public function posts()
     {
-        return $this->hasMany(posts::class);
+        return $this->hasOne(posts::class);
     }
 }

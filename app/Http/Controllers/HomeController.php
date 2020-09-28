@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\categories;
 use App\posts;
-use App\questions;
-use App\users;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -17,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+//        $this->middleware('auth');
     }
 
     /**
@@ -28,10 +26,10 @@ class HomeController extends Controller
     public function index()
     {
 
-        $user = Auth::user();
+        $posts = posts::all();
 
         return view('home', [
-            'user' => $user
+            'posts' => $posts
         ]);
     }
 }

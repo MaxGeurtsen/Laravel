@@ -12,8 +12,11 @@ class CategoriesController extends Controller
     public function index()
     {
 
+        $Allcategories = categories::all();
 
-        return view('admin.create_category');
+        return view('admin.create_category', [
+            'Allcategories' => $Allcategories
+        ]);
     }
 
     public function store(Request $request)
@@ -26,10 +29,32 @@ class CategoriesController extends Controller
         $categories->category = $request->get('category');
         $categories->save();
 
+        $Allcategories = categories::all();
 
         return view('admin.create_category', [
-            'categories' => $categories
+            'categories' => $categories,
+            'Allcategories' => $Allcategories
         ]);
 
+    }
+
+    public function active(Request $request)
+    {
+        $onoff = $request->get('input');
+        $id = $request->get('id');
+
+        if ($onoff == 'on') {
+            categories::whereId($id)
+                ->update(['active' => null]);
+
+        } elseif ($onoff == 'off') {
+            categories::whereId($id)
+                ->update(['active' => '1']);
+        }
+
+        $Allcategories = categories::all();
+        return view('admin.create_category', [
+            'Allcategories' => $Allcategories
+        ]);
     }
 }

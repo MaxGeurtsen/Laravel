@@ -35,7 +35,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
+                    <a href="{{route('create.post')}}">Maak vraag</a>
+                    <a href="{{route('create.category')}}">Maak category</a>
+{{--                    <a href="{{route('')}}">Mijn profiel</a>--}}
                 </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -67,10 +69,6 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                            </div>
-                            <a href="{{route('create.category')}}">Maak categorie</a>
-                            <a href="{{route('create.post')}}">Maak post</a>
-                            <div>
                             </div>
                         </li>
                     @endguest
