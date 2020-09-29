@@ -19,9 +19,9 @@
                 </div>
             </div>
         </div>
-        @foreach($posts as $post)
-            <h1>{{$post->id}}</h1>
-        @endforeach
+{{--        @foreach($posts as $post)--}}
+{{--            <h1>{{$post->id}}</h1>--}}
+{{--        @endforeach--}}
         <div>
         </div>
     </div>

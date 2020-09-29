@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\categories;
 use App\posts;
 use App\user_posts;
 use App\users;
@@ -25,12 +26,15 @@ class QuestionsController extends Controller
         $up->post_id = $request->get('id');
         $up->save();
 
-        $posts = posts::all();
+        $posts = posts::all()->sortByDesc('created_at');
         $votes = votes::all();
         $user_posts = users_posts::whereUserId(Auth::id())
             ->get();
+        $categories = categories::all();
+
 
         return view('home', [
+            'categories' => $categories,
             'posts' => $posts,
             'votes' => $votes,
             'user_posts' => $user_posts

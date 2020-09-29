@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\categories;
 use App\posts;
 use App\questions;
+use App\users_posts;
 use App\votes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
@@ -64,11 +67,10 @@ class PostsController extends Controller
         $post->save();
 
         $categories = categories::all();
+        $succes = true;
 
         return view('create_post', [
-            'question1' => $question1,
-            'question2' => $question2,
-            'category' => $category,
+            'succes' => $succes,
             'categories' => $categories
         ]);
 
@@ -103,4 +105,73 @@ class PostsController extends Controller
         ]);
     }
 
+
+    public function filter(Request $request)
+    {
+
+        $category = $request->get('category');
+        $text = $request->get('text');
+        $posts = [];
+
+        if (!$category && !empty($text)) {
+            $question = questions::whereQuestion($text)
+                ->get('id');
+
+            foreach ($question as $quest) {
+                $q = posts::whereQuestionId_1($quest->id)
+                    ->first();
+                if (!empty($q)) {
+                    $posts = Arr::prepend($posts, $q);
+                }
+            }
+            foreach ($question as $quest) {
+                $q = posts::whereQuestionId_2($quest->id)
+                    ->first();
+                if (!empty($q)) {
+                    $posts = Arr::prepend($posts, $q);
+
+                }
+            }
+        } elseif (!$text && !empty($category)) {
+            $posts = posts::whereCategoryId($category)
+                ->get();
+
+        } elseif (!$text && !$category) {
+            $posts = posts::all()->sortByDesc('created_at');
+
+        } elseif (!empty($text) && !empty($category)) {
+            $question = questions::whereQuestion($text)
+                ->get('id');
+
+            foreach ($question as $quest) {
+                $q = posts::whereQuestionId_1($quest->id)
+                    ->whereCategoryId($category)
+                    ->first();
+                if (!empty($q)) {
+                    $posts = Arr::prepend($posts, $q);
+                }
+            }
+            foreach ($question as $quest) {
+                $q = posts::whereQuestionId_2($quest->id)
+                    ->whereCategoryId($category)
+                    ->first();
+                if (!empty($q)) {
+                    $posts = Arr::prepend($posts, $q);
+                }
+            }
+        }
+
+        $votes = votes::all();
+        $user_posts = users_posts::whereUserId(Auth::id())
+            ->get();
+        $categories = categories::all();
+
+
+        return view('home', [
+            'posts' => $posts,
+            'votes' => $votes,
+            'user_posts' => $user_posts,
+            'categories' => $categories
+        ]);
+    }
 }

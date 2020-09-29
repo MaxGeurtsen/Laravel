@@ -19,6 +19,7 @@
                     <br>
                     <label for="category">Categorie</label><br>
                     <select name="category" id="category">
+                        <option value="">categoriën</option>
                         @foreach($categories as $category)
                             @if(!$category->active)
                                 <option value="{{$category['id']}}">{{$category['category']}}</option>
@@ -26,11 +27,12 @@
                         @endforeach
                     </select>
                     <br>
-                    <input type="submit" value="Post">
+                    <button type="submit" class="btn btn-primary">
+                        post
+                    </button>
                 </form>
-                @if($question1 ?? '')
-                    <p>De vraag: <b>{{$question1->question}} of {{$question2->question}}?</b> met
-                        categorie: <b>{{$category->category}}</b> is aangemaakt! </p>
+                @if($succes ?? '' == true)
+                    De vraag is aangemaakt!
                 @endif
             </div>
         </div>

@@ -32,7 +32,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="{{ url('/') }}">
-              A of B
+                A of B
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -45,15 +45,12 @@
                 <ul class="navbar-nav mr-auto">
                     @guest
                     @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('create.post')}}">Maak vraag</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('create.category')}}">Maak category</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('profile')}}">Mijn profiel</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('create.post')}}">Maak vraag</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('profile')}}">Mijn profiel</a>
+                        </li>
                     @endguest
                 </ul>
 
@@ -70,6 +67,14 @@
                             </li>
                         @endif
                     @else
+                        @if(\Illuminate\Support\Facades\Auth::user()->type == "admin")
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('create.category')}}">Maak category</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('users')}}">Gebruikers</a>
+                            </li>
+                        @endif
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

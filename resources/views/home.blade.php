@@ -4,24 +4,40 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
-
+                <div class="card">
+                    <div class="card-body">
+                        <form method="post" action="{{route('filter.posts')}}">
+                            @csrf
+                            <label for="category">Categorie</label><br>
+                            <select name="category" id="category">
+                                <option value="">alle categoriën</option>
+                                @foreach($categories as $category)
+                                    @if(!$category->active)
+                                        <option value="{{$category['id']}}">{{$category['category']}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                            <br>
+                            <label for="text" id="text">Tekst</label><br>
+                            <input type="text" name="text" id="text">
+                            <br>
+                            <br>
+                            <button type="submit" class="btn btn-primary">
+                             filter
+                            </button>
+                        </form>
+                    </div>
+                </div>
                 @foreach($posts ?? '' as $post)
                     @php  /** @var App\posts  $post */  @endphp
                     @if(!$post->active)
                         <div class="card">
                             <div class="card-body">
-
                                 @if(count($user_posts->where('post_id','=', $post->id) ) >= 1)
                                     <table>
                                         <td><b>{{$post->questions($post->question_id_1)}}</b></td>
                                         <td>or</td>
                                         <td><b>{{$post->questions($post->question_id_2)}}</b></td>
-                                        <td>{{$post->category->category}}</td>
-                                        <tr>
-                                            <td>{{count($votes->where('question_id' , '=' , $post->question_id_1))}}</td>
-                                            <td></td>
-                                            <td>{{count($votes->where('question_id' , '=' , $post->question_id_2))}}</td>
-                                        </tr>
                                     </table>
                                     <div
                                         style="background-color: #4dc0b5;display: block;border:1px solid #ccc!important;">
@@ -36,10 +52,11 @@
                                                 <input type="hidden" value="{{$post->question_id_1}}" id="vote"
                                                        name="vote">
                                                 <input type="hidden" value="{{$post->id}}" id="id" name="id">
-                                                <input type="submit" value="{{$post->questions($post->question_id_1)}}">
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{$post->questions($post->question_id_1)}}
+                                                </button>
                                             </form>
                                         </td>
-                                        <td>{{count($votes->where('question_id' , '=' , $post->question_id_1))}}</td>
                                         <td>or</td>
                                         <td>
                                             <form method="post" action="{{route('vote')}}">
@@ -47,19 +64,18 @@
                                                 <input type="hidden" value="{{$post->question_id_2}}" id="vote"
                                                        name="vote">
                                                 <input type="hidden" value="{{$post->id}}" id="id" name="id">
-                                                <input type="submit" value="{{$post->questions($post->question_id_2)}}">
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{$post->questions($post->question_id_2)}}
+                                                </button>
                                             </form>
                                         </td>
-                                        <td>{{count($votes->where('question_id' , '=' , $post->question_id_2))}}</td>
-                                        <td>{{$post->category->category}}</td>
                                     </table>
                                 @endif
-
                             </div>
                         </div>
                     @endif
-                    <br>
                 @endforeach
+
             </div>
         </div>
     </div>

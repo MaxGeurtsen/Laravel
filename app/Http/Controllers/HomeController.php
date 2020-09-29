@@ -29,17 +29,18 @@ class HomeController extends Controller
     public function index()
     {
 
-        $posts = posts::all();
-        $sort = $posts->sortByDesc('created_at');
+        $posts = posts::all()->sortByDesc('created_at');
         $votes = votes::all();
         $user_posts = users_posts::whereUserId(Auth::id())
             ->get();
+        $categories = categories::all();
 
 
         return view('home', [
-            'posts' => $sort,
+            'posts' => $posts,
             'votes' => $votes,
-            'user_posts' => $user_posts
+            'user_posts' => $user_posts,
+            'categories' => $categories
         ]);
     }
 }

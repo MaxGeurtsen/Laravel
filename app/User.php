@@ -35,10 +35,23 @@ use Illuminate\Notifications\Notifiable;
  * @mixin \Eloquent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\posts[] $posts
  * @property-read int|null $posts_count
+ * @property string $type
+ * @method static \Illuminate\Database\Eloquent\Builder|User whereType($value)
  */
 class User extends Authenticatable
 {
+
+
     use Notifiable;
+
+    /* app/User.php */
+    const ADMIN_TYPE = 'admin';
+    const DEFAULT_TYPE = 'default';
+
+    public function isAdmin()
+    {
+        return $this->type === self::ADMIN_TYPE;
+    }
 
     /**
      * The attributes that are mass assignable.
@@ -67,7 +80,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function posts(){
+    public function posts()
+    {
         return $this->hasMany(posts::class);
     }
 }

@@ -9,7 +9,7 @@
                 <h1>Post Details</h1>
             </div>
             <div>
-                <table>
+                <table class="table">
                     <tr>
                         <th>Vraag 1</th>
                         <th></th>
@@ -35,14 +35,18 @@
                                     @csrf
                                     <input type="hidden" id="id" name="id" value="{{$post->id}}">
                                     <input type="hidden" id="input" name="input" value="off">
-                                    <input type="submit" value="Zet uit">
+                                    <button type="submit" class="btn btn-primary">
+                                        zet uit
+                                    </button>
                                 </form>
                             @else
                                 <form method="post" action="{{route('active.post')}}">
                                     @csrf
                                     <input type="hidden" id="id" name="id" value="{{$post->id}}">
                                     <input type="hidden" id="input" name="input" value="on">
-                                    <input type="submit" value="Zet aan">
+                                    <button type="submit" class="btn btn-primary">
+                                        zet aan
+                                    </button>
                                 </form>
                             @endif
                         </td>

@@ -19,14 +19,20 @@ class UsersController extends Controller
      */
     public function index()
     {
-
-
-
         $posts = posts::whereUserId(Auth::id())
             ->get();
 
-        return view('profiel',[
+        return view('profiel', [
             'posts' => $posts
+        ]);
+    }
+
+    public function indexAll()
+    {
+        $users = users::all();
+
+        return view('admin.users',[
+            'users' => $users
         ]);
     }
 
@@ -67,7 +73,7 @@ class UsersController extends Controller
         $users->save();
 
         return view('welcome', [
-            'name' => $users->name ,
+            'name' => $users->name,
             'email' => $users->email
         ]);
 

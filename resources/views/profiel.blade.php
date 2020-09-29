@@ -7,7 +7,7 @@
         </div>
         <div>
             <h1>Mijn posts:</h1>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Vraag 1</th>
                     <th></th>
@@ -32,7 +32,9 @@
                             <form method="post" action="{{route('edit.post')}}">
                                 @csrf
                                 <input type="hidden" id="id" name="id" value="{{$post->id}}">
-                                <input type="submit" value="Wijzig">
+                                <button type="submit" class="btn btn-primary">
+                                    wijzig
+                                </button>
                             </form>
                         </td>
                     </tr>

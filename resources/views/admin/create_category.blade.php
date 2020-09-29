@@ -9,16 +9,15 @@
             <div>
                 <form method="post" action="{{route('store.category')}}">
                     @csrf
-
                     <label for="category">Nieuwe Categorie</label><br>
                     <input type="text" id="category" name="category"><br>
                     @error('category')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
+                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
                     @enderror
                     <br>
-                    <input type="submit" value="Post">
+                    <button type="submit" class="btn btn-primary">
+                        post
+                    </button>
                 </form>
                 @if($categories ?? '')
                     <h1>De categorie {{$categories['category']}} is aangemaakt! </h1>
@@ -36,10 +35,14 @@
                                         <input type="hidden" id="id" name="id" value="{{$category->id}}">
                                         @if(!$category->active)
                                             <input type="hidden" id="input" name="input" value="off">
-                                            <input type="submit" value="zet uit">
+                                            <button type="submit" class="btn btn-primary">
+                                                zet uit
+                                            </button>
                                         @else
                                             <input type="hidden" id="input" name="input" value="on">
-                                            <input type="submit" value="zet aan">
+                                            <button type="submit" class="btn btn-primary">
+                                                zet aan
+                                            </button>
                                         @endif
                                     </form>
                                 </td>

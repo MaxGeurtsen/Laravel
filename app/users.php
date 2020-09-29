@@ -29,6 +29,8 @@ use Illuminate\Database\Eloquent\Model;
  * @mixin \Eloquent
  * @property int|null $admin
  * @method static \Illuminate\Database\Eloquent\Builder|users whereAdmin($value)
+ * @property string $type
+ * @method static \Illuminate\Database\Eloquent\Builder|users whereType($value)
  */
 class users extends Model
 {
