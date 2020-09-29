@@ -19,10 +19,11 @@ route::get('user/create', function () {return view('register');})->name('registe
 Route::get('/post/create', 'PostsController@create')->name('create.post')->middleware('auth');
 Route::post('/post/store','PostsController@store')->name('store.post')->middleware('auth');
 Route::post('/post/edit', 'PostsController@index')->name('edit.post')->middleware('auth');
+Route::post('/post/active', 'PostsController@active')->name('active.post')->middleware('auth');
 
 Route::get('/category/create','CategoriesController@index')->name('create.category')->middleware('auth');
 Route::post('/category/store', 'CategoriesController@store')->name('store.category')->middleware('auth');
-Route::post('/category/onoff','CategoriesController@active')->name('active.category')->middleware('auth');
+Route::post('/category/active','CategoriesController@active')->name('active.category')->middleware('auth');
 
 Route::post('vote', 'QuestionsController@vote')->name('vote')->middleware('auth');
 

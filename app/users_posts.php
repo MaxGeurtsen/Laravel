@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * App\users_posts
@@ -24,5 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class users_posts extends Model
 {
-    public $fillable = ['user_id','post_id'];
+    public $fillable = ['user_id', 'post_id'];
+
+
 }

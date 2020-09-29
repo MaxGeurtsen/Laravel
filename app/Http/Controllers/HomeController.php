@@ -30,15 +30,16 @@ class HomeController extends Controller
     {
 
         $posts = posts::all();
+        $sort = $posts->sortByDesc('created_at');
         $votes = votes::all();
         $user_posts = users_posts::whereUserId(Auth::id())
             ->get();
 
 
         return view('home', [
-            'posts' => $posts,
+            'posts' => $sort,
             'votes' => $votes,
-            'up' => $user_posts
+            'user_posts' => $user_posts
         ]);
     }
 }

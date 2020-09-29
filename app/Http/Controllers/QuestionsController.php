@@ -27,12 +27,13 @@ class QuestionsController extends Controller
 
         $posts = posts::all();
         $votes = votes::all();
-        $user_posts = users_posts::all();
+        $user_posts = users_posts::whereUserId(Auth::id())
+            ->get();
 
         return view('home', [
             'posts' => $posts,
             'votes' => $votes,
-            'up' => $user_posts
+            'user_posts' => $user_posts
         ]);
     }
 }

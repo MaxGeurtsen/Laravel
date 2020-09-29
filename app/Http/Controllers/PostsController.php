@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\categories;
 use App\posts;
 use App\questions;
+use App\votes;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
@@ -23,11 +24,16 @@ class PostsController extends Controller
     {
         $id = $request->get('id');
 
-        $post = posts::whereId($id )
+        $post = posts::whereId($id)
             ->first();
 
+        $categories = categories::all();
+        $votes = votes::all();
+
         return view('detail', [
-            'post' => $post
+            'post' => $post,
+            'categories' => $categories,
+            'votes' => $votes
         ]);
     }
 
@@ -67,6 +73,34 @@ class PostsController extends Controller
         ]);
 
 
+    }
+
+    public function active(Request $request)
+    {
+
+        $active = $request->get('input');
+        $id = $request->get('id');
+
+        if ($active == 'on') {
+            posts::whereId($id)
+                ->update(['active' => null]);
+
+        } elseif ($active == 'off') {
+            posts::whereId($id)
+                ->update(['active' => '1']);
+        }
+
+
+        $post = posts::whereId($id)
+            ->first();
+        $categories = categories::all();
+        $votes = votes::all();
+
+        return view('detail', [
+            'post' => $post,
+            'categories' => $categories,
+            'votes' => $votes
+        ]);
     }
 
 }
