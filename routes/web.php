@@ -28,6 +28,8 @@ Route::post('/category/store', 'CategoriesController@store')->name('store.catego
 Route::post('/category/active','CategoriesController@active')->name('active.category')->middleware('is_admin');
 
 Route::get('/users', 'UsersController@indexAll')->name('users')->middleware('is_admin');
+Route::post('/users/detail','UsersController@show')->name('users.show')->middleware('is_admin');
+Route::post('/users/edit','UsersController@edit')->name('users.edit')->middleware('is_admin');
 
 Route::post('vote', 'QuestionsController@vote')->name('vote')->middleware('auth');
 

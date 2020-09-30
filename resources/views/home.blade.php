@@ -10,7 +10,7 @@
                             @csrf
                             <label for="category">Categorie</label><br>
                             <select name="category" id="category">
-                                <option value="">alle categoriën</option>
+                                <option value="">Alle categoriën</option>
                                 @foreach($categories as $category)
                                     @if(!$category->active)
                                         <option value="{{$category['id']}}">{{$category['category']}}</option>
@@ -23,7 +23,7 @@
                             <br>
                             <br>
                             <button type="submit" class="btn btn-primary">
-                             filter
+                                filter
                             </button>
                         </form>
                     </div>
@@ -35,9 +35,9 @@
                             <div class="card-body">
                                 @if(count($user_posts->where('post_id','=', $post->id) ) >= 1)
                                     <table>
-                                        <td><b>{{$post->questions($post->question_id_1)}}</b></td>
-                                        <td>or</td>
-                                        <td><b>{{$post->questions($post->question_id_2)}}</b></td>
+                                        <td style="color:blue "><b>{{$post->questions($post->question_id_1)}}</b></td>
+                                        <td>of</td>
+                                        <td style="color:#4dc0b5 "><b>{{$post->questions($post->question_id_2)}}</b></td>
                                     </table>
                                     <div
                                         style="background-color: #4dc0b5;display: block;border:1px solid #ccc!important;">

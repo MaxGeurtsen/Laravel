@@ -21,26 +21,21 @@
 
                                 @php  /** @var App\User  $user */  @endphp
                                 <tr>
+                                    <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->type}}</td>
                                     <td>{{$user->created_at}}</td>
                                     <td>
-                                        <form method="post" action="">
-                                            <input type="hidden" value="{{$user->id}}">
+                                        <form method="post" action="{{route('users.show')}}">
+                                            @csrf
+                                            <input type="hidden" name="id" id="id" value="{{$user->id}}">
                                             <button type="submit" class="btn btn-primary">
                                                 wijzig
                                             </button>
                                         </form>
                                     </td>
-                                    <td>
-                                        <form method="post" action="">
-                                            <input type="hidden" value="{{$user->id}}">
-                                            <button type="submit" class="btn btn-primary">
-                                                verwijder
-                                            </button>
-                                        </form>
-                                    </td>
+
                                 </tr>
                             @endforeach
                         </table>

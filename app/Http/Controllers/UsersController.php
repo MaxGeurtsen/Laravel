@@ -31,7 +31,7 @@ class UsersController extends Controller
     {
         $users = users::all();
 
-        return view('admin.users',[
+        return view('admin.users', [
             'users' => $users
         ]);
     }
@@ -67,7 +67,7 @@ class UsersController extends Controller
         ]);
 
         $users = new users();
-        $users->name = $request->get('name');
+        $users->name = ucfirst($request->get('name'));
         $users->email = $request->get('email');
         $users->password = $hashed;
         $users->save();
@@ -83,23 +83,52 @@ class UsersController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param \Illuminate\Http\Request $request
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $id = $request->get('id');
+
+        $user = users::whereId($id)->first();
+
+        return view('admin.users_detail', [
+            'user' => $user
+        ]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
+     * @param \Illuminate\Http\Request $request
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+
+        $request->validate([
+            "name" => 'required',
+            "email" => 'required|email|unique:users',
+            "type" => 'required'
+        ]);
+
+        $id = $request->get('id');
+
+        $users = users::whereId($id)->first();
+        $users->name = ucfirst($request->get('name'));
+        $users->email = $request->get('email');
+        $users->type = $request->get('type');
+        $users->save();
+
+        $users = users::all();
+
+        return view('admin.users', [
+            'users' => $users
+        ]);
+
     }
 
     /**

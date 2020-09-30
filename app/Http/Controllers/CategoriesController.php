@@ -26,7 +26,7 @@ class CategoriesController extends Controller
         ]);
 
         $categories = new categories();
-        $categories->category = $request->get('category');
+        $categories->category = ucfirst($request->get('category')) ;
         $categories->save();
 
         $Allcategories = categories::all();

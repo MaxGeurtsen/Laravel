@@ -16,10 +16,16 @@ class PostsController extends Controller
     public function create()
     {
 
+        $user_posts = users_posts::all();
+        $userId = Auth::id();
+        $count = count($user_posts->where('user_id', '=', $userId));
+
+
         $categories = categories::all();
 
         return view('create_post', [
-            'categories' => $categories
+            'categories' => $categories,
+            'count' => $count
         ]);
     }
 
@@ -49,11 +55,11 @@ class PostsController extends Controller
         ]);
 
         $question1 = new questions();
-        $question1->question = $request->get('question1');
+        $question1->question = ucfirst($request->get('question1'));
         $question1->save();
 
         $question2 = new questions();
-        $question2->question = $request->get('question2');
+        $question2->question = ucfirst($request->get('question2'));
         $question2->save();
 
         $category = $request->get('category');
@@ -68,10 +74,14 @@ class PostsController extends Controller
 
         $categories = categories::all();
         $succes = true;
+        $user_posts = users_posts::all();
+        $userId = Auth::id();
+        $count = count($user_posts->where('user_id', '=', $userId));
 
         return view('create_post', [
             'succes' => $succes,
-            'categories' => $categories
+            'categories' => $categories,
+            'count' => $count
         ]);
 
 
