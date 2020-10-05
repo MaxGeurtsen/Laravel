@@ -18,10 +18,8 @@
                                 <th></th>
                             </tr>
                             @foreach($users as $user)
-
                                 @php  /** @var App\User  $user */  @endphp
                                 <tr>
-                                    <td>{{$user->id}}</td>
                                     <td>{{$user->name}}</td>
                                     <td>{{$user->email}}</td>
                                     <td>{{$user->type}}</td>
@@ -37,6 +35,7 @@
                                     </td>
 
                                 </tr>
+
                             @endforeach
                         </table>
 

@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="67cc8207-dc74-43b3-918f-76220f934d23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/users_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PostsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_21_122616_create_votes_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_21_122616_create_votes_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/create_post.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create_post.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users_detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users_detail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/profiel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiel.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +272,15 @@
       <workItem from="1601376623855" duration="11571000" />
       <workItem from="1601389038279" duration="220000" />
       <workItem from="1601406896277" duration="480000" />
-      <workItem from="1601466752743" duration="7210000" />
+      <workItem from="1601466752743" duration="7477000" />
+      <workItem from="1601489484149" duration="29000" />
+      <workItem from="1601579175085" duration="354000" />
+      <workItem from="1601883220193" duration="947000" />
+      <workItem from="1601884869233" duration="228000" />
+      <workItem from="1601885445164" duration="639000" />
+      <workItem from="1601891016805" duration="599000" />
+      <workItem from="1601898683732" duration="1013000" />
+      <workItem from="1601900247644" duration="1683000" />
     </task>
     <task id="LOCAL-00001" summary="Query set-up">
       <created>1601306310444</created>
