@@ -124,7 +124,7 @@ class PostsController extends Controller
         $posts = [];
 
         if (!$category && !empty($text)) {
-            $question = questions::whereQuestion($text)
+            $question = questions::where('question', 'like', '%'. $text . '%')
                 ->get('id');
 
             foreach ($question as $quest) {
@@ -150,7 +150,7 @@ class PostsController extends Controller
             $posts = posts::all()->sortByDesc('created_at');
 
         } elseif (!empty($text) && !empty($category)) {
-            $question = questions::whereQuestion($text)
+            $question = questions::where('question', 'like', '%'. $text . '%')
                 ->get('id');
 
             foreach ($question as $quest) {

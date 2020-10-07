@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>A of B</title>
 
     <!-- Scripts -->
     {{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
@@ -67,7 +67,7 @@
                             </li>
                         @endif
                     @else
-                        @if(\Illuminate\Support\Facades\Auth::user()->type == "admin")
+                        @if( Auth::user()->type == "admin")
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('create.category')}}">Maak category</a>
                             </li>

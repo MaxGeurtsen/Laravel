@@ -60,7 +60,6 @@
                                         {{ __('wijzig') }}
                                     </button>
                                 </div>
-                            </div>
                         </form>
                     </div>
                 </div>

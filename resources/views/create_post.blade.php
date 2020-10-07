@@ -10,11 +10,8 @@
                 @if(\Illuminate\Support\Facades\Auth::user()->type == "admin" || $count >= 2)
                     <form method="post" action="{{route('store.post')}}">
                         @csrf
-
-                        {{--                <label for="question1"></label><br>--}}
                         <input type="text" id="question1" name="question1">
-                        of
-                        {{--                <label for="question2"></label><br>--}}
+                        or
                         <input type="text" id="question2" name="question2">
                         ?
                         <br>
