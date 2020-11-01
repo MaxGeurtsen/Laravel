@@ -30,8 +30,14 @@
                             post
                         </button>
                     </form>
+                    @error('question1')
+                   Vraag 1 is leeg!<br>
+                    @enderror
+                    @error('question2')
+                    Vraag 2 is leeg!<br>
+                    @enderror
                     @error('category')
-                    <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                    Categorie is leeg!<br>
                     @enderror
                     @if($succes ?? '' == true)
                         De vraag is aangemaakt!
